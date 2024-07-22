@@ -54,7 +54,7 @@ const App = () => {
 
         <View style={styles.bottomSheetButtons}>
         <TouchableOpacity style={[styles.bottomSheetButton, styles.openBottomSheetButton]} onPress={() => bottomSheetRef.current?.expand()}>
-          <Text style={styles.openBottomSheetButtonText}>Add keypoint</Text>
+          <Text style={styles.openBottomSheetButtonText}>Add keypoints</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.bottomSheetButton, styles.cancelButton]} onPress={handleCancel}>
           <Text style={styles.cancelbuttonText}>Close</Text>
