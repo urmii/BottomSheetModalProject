@@ -1,8 +1,6 @@
 import React, { useRef, useState, useMemo } from 'react';
-import {
-  SafeAreaView, StyleSheet, View, Text, TextInput, TouchableOpacity, FlatList, Keyboard,
-  TouchableWithoutFeedback, Platform, KeyboardAvoidingView, Linking
-} from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text, TextInput, TouchableOpacity, FlatList, Keyboard, 
+  TouchableWithoutFeedback, Platform, KeyboardAvoidingView,Linking } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
@@ -49,21 +47,21 @@ const App = () => {
     <GestureHandlerRootView style={styles.container}>
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.title}>Welcome to keypoints!</Text>
+          <Text style={styles.title}>Welcome!</Text>
         </View>
 
         <View style={styles.bottomSheetButtons}>
         <TouchableOpacity style={[styles.bottomSheetButton, styles.openBottomSheetButton]} onPress={() => bottomSheetRef.current?.expand()}>
-          <Text style={styles.openBottomSheetButtonText}>Add keypoints</Text>
+          <Text style={styles.openBottomSheetButtonText}>Open Modal</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.bottomSheetButton, styles.cancelButton]} onPress={handleCancel}>
-          <Text style={styles.cancelbuttonText}>Close</Text>
+          <Text style={styles.cancelbuttonText}>Close Modal</Text>
         </TouchableOpacity>
         </View>
 
         <View style={styles.header}>
-          <Text style={styles.instructions}>1. Tap 'Add Keypoints' to add new keypoints.</Text>
-        <Text style={styles.instructions}>2. Save your notes to have them listed here.</Text>
+          <Text style={styles.instructions}>1. Tap 'Open Modal' to add new keypoints/text.</Text>
+          <Text style={styles.instructions}>2. Save your keypoints/text to have them listed here.</Text>
         </View>
 
         <FlatList
@@ -78,6 +76,14 @@ const App = () => {
               <Text style={styles.clearButtonText}>Clear All</Text>
           </TouchableOpacity>
         )}
+        <View>
+          <Text style={styles.instructions}>
+            Have suggestions or issues? 
+            <Text style={styles.emailLink} onPress={handleEmailPress}>
+            {' Contact us through the email.'}
+            </Text>
+          </Text>
+        </View>
         
         <BottomSheet
           ref={bottomSheetRef}
@@ -93,7 +99,7 @@ const App = () => {
               <View style={styles.bottomSheetContent}>
                 <TextInput
                   style={[styles.input, error ? styles.inputError : null]}
-                  placeholder="keypoints"
+                  placeholder="Enter your text here"
                   value={inputText}
                   onChangeText={setInputText}
                   placeholderTextColor="#888"
@@ -109,14 +115,7 @@ const App = () => {
           </TouchableWithoutFeedback>
         </BottomSheet>
       </SafeAreaView>
-      <View>
-      <Text style={styles.instructions}>
-        Have suggestions or issues? 
-        <Text style={styles.emailLink} onPress={handleEmailPress}>
-          {' Contact us through the email.'}
-        </Text>
-        </Text>
-      </View>
+     
     </GestureHandlerRootView>
   );
 };
@@ -240,7 +239,7 @@ const styles = StyleSheet.create({
     padding: 15,
     alignItems: 'center',
     position: 'absolute',
-    bottom: 10, 
+    bottom: 70, 
     width: '100%',
     color: '#4b666b',
     fontSize: 16,
