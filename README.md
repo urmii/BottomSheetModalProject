@@ -4,6 +4,10 @@ This project demonstrates the implementation of a bottom sheet modal in a React 
 The modal allows users to enter and save keypoints/texts, which are then displayed on the main screen. 
 The modal is designed to handle keyboard visibility appropriately.
 
+## Project Video Demo
+
+https://app.screencastify.com/v3/watch/w3LL7aWxWyOXPlxKnCKW
+
 ## Instructions
 
 ### Setup
