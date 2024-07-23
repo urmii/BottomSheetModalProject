@@ -51,12 +51,12 @@ const App = () => {
         </View>
 
         <View style={styles.bottomSheetButtons}>
-        <TouchableOpacity style={[styles.bottomSheetButton, styles.openBottomSheetButton]} onPress={() => bottomSheetRef.current?.expand()}>
-          <Text style={styles.openBottomSheetButtonText}>Open Modal</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.bottomSheetButton, styles.cancelButton]} onPress={handleCancel}>
-          <Text style={styles.cancelbuttonText}>Close Modal</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={[styles.bottomSheetButton, styles.openBottomSheetButton]} onPress={() => bottomSheetRef.current?.expand()}>
+            <Text style={styles.openBottomSheetButtonText}>Open Modal</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.bottomSheetButton, styles.cancelButton]} onPress={handleCancel}>
+            <Text style={styles.cancelbuttonText}>Close Modal</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.header}>
